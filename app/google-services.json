@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1037778836460",
+    "project_id": "adaapp-f73d9",
+    "storage_bucket": "adaapp-f73d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037778836460:android:bb6a05bb5d8a4a9f43fec9",
+        "android_client_info": {
+          "package_name": "com.mijale.adaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037778836460-ngo4ne28b97llivc6cooos4v23jjlp6k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mijale.adaapp",
+            "certificate_hash": "5f0b4685bcc14ede34ca6d7591b41739e6d57ac3"
+          }
+        },
+        {
+          "client_id": "1037778836460-7fr0kvrkvak96k16n4p3c2n2v6kd6mjc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtku56DITG34fTb9umJ2vFji6DBAdIIrw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037778836460-7fr0kvrkvak96k16n4p3c2n2v6kd6mjc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
