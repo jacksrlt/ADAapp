@@ -5,3 +5,5 @@ Aplicación que fomenta la integración de las mujeres en la informática que in
 Hemos hecho el prototipo en Figma
 
 https://www.figma.com/file/FmpTpxTCvsmg5IXkeueUsg/ADAapp?node-id=0%3A1
+
+![captura](/img/captura.png)
