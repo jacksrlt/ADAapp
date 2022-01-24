@@ -3,10 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Documentos/Clases/DI/ADAapp/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Documentos/Clases/DI/ADAapp/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
-        <entry key="..\:/Perfiles/am8DAM2/ADAapp/app/src/main/res/layout/activity_login.xml" value="0.2884963768115942" />
-        <entry key="..\:/Perfiles/am8DAM2/ADAapp/app/src/main/res/layout/activity_main.xml" value="0.20878623188405798" />
-        <entry key="..\:/Perfiles/am8DAM2/ADAapp/app/src/main/res/layout/activity_register.xml" value="0.2884963768115942" />
+        <entry key="..\:/Documentos/Clases/DI/ADAapp/app/src/main/res/layout/activity_register.xml" value="0.4466666666666667" />
+        <entry key="..\:/Documentos/Clases/DI/ADAapp/app/src/main/res/menu/bottom_app_bar_menu.xml" value="0.1796875" />
       </map>
     </option>
   </component>
