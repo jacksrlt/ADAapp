@@ -34,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         //Inicializar vistas
         emailTextView = findViewById(R.id.etCorreoElec);
-        passwordTextView = findViewById(R.id.etRcontraseña);
+        passwordTextView = findViewById(R.id.etContraseña);
         Btn = findViewById(R.id.regis);
 
         //Onclick Listener en Botón de registro
