@@ -33,8 +33,8 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Inicializar vistas
-        emailTextView = findViewById(R.id.etCorreoElec);
-        passwordTextView = findViewById(R.id.etContraseña);
+        emailTextView = findViewById(R.id.Correo);
+        passwordTextView = findViewById(R.id.contraseña);
         Btn = findViewById(R.id.regis);
 
         //Onclick Listener en Botón de registro

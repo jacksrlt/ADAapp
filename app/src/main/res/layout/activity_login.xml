@@ -5,20 +5,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    style="NoActionTheme">
 
 
-    <EditText
-        android:id="@+id/loginPassword"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginEmailAddress" />
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="35dp"
+        android:hint="Usuario"
+        app:layout_constraintBottom_toTopOf="@+id/textField2"
+        app:layout_constraintEnd_toEndOf="@+id/textField2"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/logginUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            tools:layout_editor_absoluteX="105dp"
+            tools:layout_editor_absoluteY="150dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="24dp"
+        android:hint="Contraseña"
+        app:layout_constraintBottom_toTopOf="@+id/EnL"
+        app:layout_constraintStart_toStartOf="@+id/EnL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            tools:layout_editor_absoluteX="105dp"
+            tools:layout_editor_absoluteY="150dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/loginWelcome"
@@ -31,44 +64,32 @@
         android:textColor="#0B0A0A"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textField1"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/loginEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginWelcome" />
 
     <Button
         android:id="@+id/EnL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="328dp"
         android:backgroundTint="#0CFFFFFF"
         android:fontFamily="monospace"
-        android:text="Iniciar Sesión"
         android:stateListAnimator="@null"
+        android:text="Iniciar Sesión"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/ReL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="45dp"
         android:backgroundTint="#00FFFFFF"
         android:fontFamily="monospace"
         android:stateListAnimator="@null"
@@ -76,26 +97,24 @@
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/EnL"
         app:layout_constraintTop_toBottomOf="@+id/EnL" />
 
     <Button
         android:id="@+id/InL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="126dp"
         android:backgroundTint="#00FFFFFF"
         android:fontFamily="monospace"
-        android:text="Entrar como invitado"
         android:stateListAnimator="@null"
+        android:text="Entrar como invitado"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="12sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ReL" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

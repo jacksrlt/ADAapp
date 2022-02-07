@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Inicializar vistas
-        emailTextView = findViewById(R.id.loginEmailAddress);
+        emailTextView = findViewById(R.id.logginUser);
         passwordTextView = findViewById(R.id.loginPassword);
         registro = findViewById(R.id.ReL);
         iniciarSesion = findViewById(R.id.EnL);
