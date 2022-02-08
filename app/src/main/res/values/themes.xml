@@ -14,15 +14,4 @@
         <!-- Customize your theme here. -->
 
     </style>
-
-    <style name="NoActionTheme" parent="Theme.AppCompat.DayNight.NoActionBar"></style>
-
-    <style name="NoActionTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="NoActionTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="NoActionTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
