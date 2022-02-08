@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class RegisterActivity extends AppCompatActivity {
-
+    private Button  volver;
     private EditText emailTextView, passwordTextView;
     private TextView Btn;
     private FirebaseAuth mAuth;
@@ -42,6 +43,13 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registerNewUser();
+            }
+        });
+        volver=findViewById(R.id.volverLog);
+        volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

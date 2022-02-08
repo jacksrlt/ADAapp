@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPassword"
+            android:inputType="text"
             tools:layout_editor_absoluteX="105dp"
             tools:layout_editor_absoluteY="150dp" />
 
@@ -40,7 +40,8 @@
         android:layout_marginBottom="24dp"
         android:hint="Contraseña"
         app:layout_constraintBottom_toTopOf="@+id/EnL"
-        app:layout_constraintStart_toStartOf="@+id/EnL">
+        app:layout_constraintStart_toStartOf="@+id/EnL"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/loginPassword"
@@ -48,6 +49,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
+
             tools:layout_editor_absoluteX="105dp"
             tools:layout_editor_absoluteY="150dp" />
 
