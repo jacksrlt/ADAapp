@@ -21,7 +21,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-
+    private Button invitado;
     private EditText emailTextView, passwordTextView;
     private TextView iniciarSesion;
     private TextView registro;
@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Inicializar vistas
-        emailTextView = findViewById(R.id.loginEmailAddress);
+        emailTextView = findViewById(R.id.logginUser);
         passwordTextView = findViewById(R.id.loginPassword);
         registro = findViewById(R.id.ReL);
         iniciarSesion = findViewById(R.id.EnL);
@@ -56,6 +56,17 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 loginUserAccount();
+            }
+        });
+
+
+        invitado=findViewById(R.id.InL);
+        invitado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inten=new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(inten);
+                finish();
             }
         });
     }
@@ -104,6 +115,7 @@ public class LoginActivity extends AppCompatActivity {
                                             = new Intent(LoginActivity.this,
                                             MainActivity.class);
                                     startActivity(intent);
+                                    finish();
                                 }
 
                                 else {
