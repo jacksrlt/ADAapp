@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:theme="@style/estiloLogins"
     tools:context=".RegisterActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textField1"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="84dp"
         android:hint="Nombre de usuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,28 +20,28 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/user"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            tools:layout_editor_absoluteX="105dp"
+            tools:layout_editor_absoluteX="102dp"
             tools:layout_editor_absoluteY="150dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textField2"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="31dp"
         android:hint="Correo Electronico"
-        app:layout_constraintStart_toStartOf="@+id/textField1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textField1">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Correo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
@@ -51,17 +52,18 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textField3"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="29dp"
         android:hint="Contraseña"
-        app:layout_constraintStart_toStartOf="@+id/textField2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textField2"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/contraseña"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
@@ -72,18 +74,18 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textField4"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="2dp"
+        android:layout_marginTop="26dp"
         android:hint="Repetir contraseña"
-        app:layout_constraintEnd_toEndOf="@+id/textField3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textField3"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/repetircontra"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
@@ -96,8 +98,8 @@
         android:id="@+id/regis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="47dp"
         android:backgroundTint="#00FFFFFF"
         android:fontFamily="monospace"
         android:stateListAnimator="@null"
@@ -105,15 +107,14 @@
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/volverLog"
-        app:layout_constraintStart_toStartOf="@+id/textField4" />
+        app:layout_constraintStart_toStartOf="@+id/textField4"
+        app:layout_constraintTop_toBottomOf="@+id/textField4" />
 
     <Button
         android:id="@+id/volverLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
-        android:layout_marginBottom="108dp"
         android:backgroundTint="#00FFFFFF"
         android:fontFamily="monospace"
         android:stateListAnimator="@null"
@@ -121,7 +122,7 @@
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/regis" />
+        app:layout_constraintStart_toStartOf="@+id/regis"
+        app:layout_constraintTop_toBottomOf="@+id/regis" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

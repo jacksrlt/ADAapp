@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Inicializar vistas
-        emailTextView = findViewById(R.id.logginUser);
+        emailTextView = findViewById(R.id.loginUser);
         passwordTextView = findViewById(R.id.loginPassword);
         registro = findViewById(R.id.ReL);
         iniciarSesion = findViewById(R.id.EnL);
@@ -64,8 +64,8 @@ public class LoginActivity extends AppCompatActivity {
         invitado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent inten=new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(inten);
+                Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(intent);
                 finish();
             }
         });

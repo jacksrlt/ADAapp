@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.ADAapp" parent="Theme.MaterialComponents">
+    <style name="Theme.ADAapp" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -14,4 +14,15 @@
         <!-- Customize your theme here. -->
 
     </style>
+
+
+    <style name="estiloLogins" parent="Theme.Material3.DayNight.NoActionBar"></style>
+
+    <style name="estiloLogins.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+
 </resources>
