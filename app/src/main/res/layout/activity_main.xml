@@ -5,23 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.ADAapp"
-    tools:context=".MainActivity"
-    >
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    tools:context=".MainActivity">
 
-    </EditText>
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="670dp"
-        android:layout_gravity="bottom"
-        />
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -50,9 +45,6 @@
         app:layout_anchor="@id/bottomAppBar"
 
         />
-
-
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
