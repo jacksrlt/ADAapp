@@ -16,7 +16,7 @@
     </style>
 
 
-    <style name="estiloLogins" parent="Theme.Material3.DayNight.NoActionBar"></style>
+    <style name="estiloLogins" parent="Theme.MaterialComponents.DayNight.NoActionBar"></style>
 
     <style name="estiloLogins.NoActionBar">
         <item name="windowActionBar">false</item>
