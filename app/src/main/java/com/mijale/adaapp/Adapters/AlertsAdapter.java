@@ -1,6 +1,7 @@
 package com.mijale.adaapp.Adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,25 +11,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.fido.fido2.api.common.RequestOptions;
+import com.mijale.adaapp.Entidades.Alerts;
 import com.mijale.adaapp.Entidades.Persona;
 import com.mijale.adaapp.R;
 
 import java.util.ArrayList;
 
-public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ViewHolder> implements View.OnClickListener {
+public class AlertsAdapter extends RecyclerView.Adapter<AlertsAdapter.ViewHolder> implements View.OnClickListener {
 
     LayoutInflater inflater;
-    ArrayList<Persona> model;
+    ArrayList<Alerts> model;
     //listener
     private View.OnClickListener listener;
 
 
-
-    public AdapterListas(Context context,ArrayList<Persona> model){
+    public AlertsAdapter(Context context, ArrayList<Alerts> model) {
         this.inflater = LayoutInflater.from(context);
         this.model = model;
-
     }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -37,19 +39,20 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ViewHolder
         return new ViewHolder(view);
     }
 
-  public void setOnClickListener(View.OnClickListener listener){
+
+    public void setOnClickListener(View.OnClickListener listener){
         this.listener = listener;
-  }
+    }
+
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        String user = model.get(position).getNombredentro();
-        String textodentro = model.get(position).getTextodentro();
-        int imagen = model.get(position).getImagenId();
-        holder.user.setText(user);
-        holder.textodentro.setText(textodentro);
-        holder.imagen.setImageResource(imagen);
+
+        String textoAlerts = model.get(position).getTextoAlerts();
+        int imagenAlerts = model.get(position).getImagenAlerts();
+        holder.textoAlerts.setText(textoAlerts);
+        holder.imagenAlerts.setImageResource(imagenAlerts);
     }
 
     @Override
@@ -65,17 +68,14 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+        ImageView imagenAlerts;
+        TextView textoAlerts;
 
-        TextView user, textodentro;
-        ImageView imagen;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            user = itemView.findViewById(R.id.user);
-            textodentro = itemView.findViewById(R.id.textodentro);
-            imagen = itemView.findViewById(R.id.imagen);
-
+        public ViewHolder(View itemView) {
+           super(itemView);
+           this.imagenAlerts = itemView.findViewById(R.id.imagenAlerts);
+           this.textoAlerts = itemView.findViewById(R.id.textoAlerts);
         }
     }
-
 }

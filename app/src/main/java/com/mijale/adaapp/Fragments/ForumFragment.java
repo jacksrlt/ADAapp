@@ -43,16 +43,16 @@ public class ForumFragment extends Fragment {
     }
 
     public void cargarLista(){
-        listaPersonas.add(new Persona("User","hola!!",R.drawable.common_google_signin_btn_icon_dark_normal_background));
-        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.common_google_signin_btn_icon_dark_normal));
-        listaPersonas.add(new Persona("User","hola!!",R.drawable.common_google_signin_btn_icon_dark_normal_background));
-        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.common_google_signin_btn_icon_dark_normal));
-        listaPersonas.add(new Persona("User","hola!!",R.drawable.common_google_signin_btn_icon_dark_normal_background));
-        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.common_google_signin_btn_icon_dark_normal));
-        listaPersonas.add(new Persona("User","hola!!",R.drawable.common_google_signin_btn_icon_dark_normal_background));
-        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.common_google_signin_btn_icon_dark_normal));
-        listaPersonas.add(new Persona("User","hola!!",R.drawable.common_google_signin_btn_icon_dark_normal_background));
-        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.common_google_signin_btn_icon_dark_normal));
+        listaPersonas.add(new Persona("User","Aqui os dejo la nueva noticia sobre phyton!",R.drawable.odoo));
+        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.odoo));
+        listaPersonas.add(new Persona("User","hola!!",R.drawable.odoo));
+        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.odoo));
+        listaPersonas.add(new Persona("User","hola!!",R.drawable.odoo));
+        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.odoo));
+        listaPersonas.add(new Persona("User","hola!!",R.drawable.odoo));
+        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.odoo));
+        listaPersonas.add(new Persona("User","hola!!",R.drawable.odoo));
+        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.odoo));
     }
 
     public void mostrarData(){
