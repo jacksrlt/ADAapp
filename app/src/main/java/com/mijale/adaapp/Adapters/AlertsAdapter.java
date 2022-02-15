@@ -1,7 +1,6 @@
 package com.mijale.adaapp.Adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.fido.fido2.api.common.RequestOptions;
+
 import com.mijale.adaapp.Entidades.Alerts;
-import com.mijale.adaapp.Entidades.Persona;
 import com.mijale.adaapp.R;
 
 import java.util.ArrayList;
@@ -21,20 +19,20 @@ import java.util.ArrayList;
 public class AlertsAdapter extends RecyclerView.Adapter<AlertsAdapter.ViewHolder> implements View.OnClickListener {
 
     LayoutInflater inflater;
-    ArrayList<Alerts> model;
+    ArrayList<Alerts> modelo;
     //listener
     private View.OnClickListener listener;
 
 
-    public AlertsAdapter(Context context, ArrayList<Alerts> model) {
+    public AlertsAdapter(Context context, ArrayList<Alerts> modelo) {
         this.inflater = LayoutInflater.from(context);
-        this.model = model;
+        this.modelo = modelo;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.lista, parent, false);
+        View view = inflater.inflate(R.layout.staggered, parent, false);
         view.setOnClickListener(this);
         return new ViewHolder(view);
     }
@@ -47,17 +45,15 @@ public class AlertsAdapter extends RecyclerView.Adapter<AlertsAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
-
-        String textoAlerts = model.get(position).getTextoAlerts();
-        int imagenAlerts = model.get(position).getImagenAlerts();
+        String textoAlerts = modelo.get(position).getTextoAlerts();
+        int imagenAlerts = modelo.get(position).getImagenAlerts();
         holder.textoAlerts.setText(textoAlerts);
         holder.imagenAlerts.setImageResource(imagenAlerts);
     }
 
     @Override
     public int getItemCount() {
-        return model.size();
+        return modelo.size();
     }
 
     @Override
@@ -72,10 +68,10 @@ public class AlertsAdapter extends RecyclerView.Adapter<AlertsAdapter.ViewHolder
         TextView textoAlerts;
 
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(@NonNull View itemView) {
            super(itemView);
-           this.imagenAlerts = itemView.findViewById(R.id.imagenAlerts);
-           this.textoAlerts = itemView.findViewById(R.id.textoAlerts);
+           imagenAlerts = itemView.findViewById(R.id.imagenAlerts);
+           textoAlerts = itemView.findViewById(R.id.textoAlerts);
         }
     }
 }

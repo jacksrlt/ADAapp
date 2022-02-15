@@ -23,7 +23,6 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ViewHolder
     private View.OnClickListener listener;
 
 
-
     public AdapterListas(Context context,ArrayList<Persona> model){
         this.inflater = LayoutInflater.from(context);
         this.model = model;
@@ -43,7 +42,6 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
         String user = model.get(position).getNombredentro();
         String textodentro = model.get(position).getTextodentro();
         int imagen = model.get(position).getImagenId();

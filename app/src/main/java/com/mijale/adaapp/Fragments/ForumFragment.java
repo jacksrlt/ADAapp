@@ -43,16 +43,17 @@ public class ForumFragment extends Fragment {
     }
 
     public void cargarLista(){
-        listaPersonas.add(new Persona("User","Aqui os dejo la nueva noticia sobre phyton!",R.drawable.odoo));
-        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.odoo));
-        listaPersonas.add(new Persona("User","hola!!",R.drawable.odoo));
-        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.odoo));
-        listaPersonas.add(new Persona("User","hola!!",R.drawable.odoo));
-        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.odoo));
-        listaPersonas.add(new Persona("User","hola!!",R.drawable.odoo));
-        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.odoo));
-        listaPersonas.add(new Persona("User","hola!!",R.drawable.odoo));
-        listaPersonas.add(new Persona("User2","holaaa!!",R.drawable.odoo));
+        listaPersonas.add(new Persona("Maria_laGuapa","Aqui os dejo la nueva noticia sobre phyton! " +
+                "Aqui os dejo la nueva noticia sobre phyton! " +
+                "Aqui os dejo la nueva noticia sobre phyton! " +
+                "Aqui os dejo la nueva noticia sobre phyton! " +
+
+
+                "",R.drawable.odoo));
+        listaPersonas.add(new Persona("RamolaLaPechugona","holaaa!!",R.drawable.odoo));
+        listaPersonas.add(new Persona("AlbaLaBernarda","holaaa!!",R.drawable.odoo));
+        listaPersonas.add(new Persona("TuhMorenita69","holaaa!!",R.drawable.odoo));
+        listaPersonas.add(new Persona("Rociiito1212","holaaa!!",R.drawable.odoo));
     }
 
     public void mostrarData(){

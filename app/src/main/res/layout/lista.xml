@@ -2,60 +2,67 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="5dp"
-    app:cardElevation="5dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="7dp"
     app:cardUseCompatPadding="true">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/imagen"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/common_google_signin_btn_icon_disabled">
 
-        </ImageView>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imagen"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/odoo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded">
+
+        </com.google.android.material.imageview.ShapeableImageView>
 
         <TextView
             android:id="@+id/textodentro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/imagen"
-            android:text="hola">
+            android:layout_width="269dp"
+            android:layout_height="98dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/imagen"
+            android:text="hint"
+            android:textSize="15dp"
+            app:layout_constraintStart_toEndOf="@+id/imagen"
+            app:layout_constraintTop_toBottomOf="@+id/user">
 
         </TextView>
 
         <TextView
             android:id="@+id/user"
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="0dp"
-
-            android:text="hola">
-
-        </TextView>
+            android:text="hint"
+            android:layout_marginStart="10dp"
+            android:textSize="11sp"
+            app:layout_constraintStart_toEndOf="@+id/imagen"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/likes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerInside"
-            android:layout_marginLeft="350dp"
-            android:layout_marginTop="110dp"
+            android:layout_width="38dp"
+            android:layout_height="29dp"
             android:clickable="true"
-
-            android:src="@drawable/ic_like">
+            android:src="@drawable/ic_likes2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
         </ImageView>
 
-    </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.cardview.widget.CardView>

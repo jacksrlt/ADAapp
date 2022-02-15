@@ -16,6 +16,8 @@ import android.widget.TableLayout;
 
 import com.google.firebase.firestore.DocumentReference;
 import com.mijale.adaapp.Adapters.AdapterListas;
+import com.mijale.adaapp.Adapters.AlertsAdapter;
+import com.mijale.adaapp.Entidades.Alerts;
 import com.mijale.adaapp.Entidades.Persona;
 import com.mijale.adaapp.R;
 
@@ -24,9 +26,9 @@ import java.util.ArrayList;
 
 public class AlertsFragment extends Fragment {
 
-    AdapterListas adapterListas;
+    AlertsAdapter adapterAlert;
     RecyclerView recyclerAlerts;
-    ArrayList<Persona> listaPersonas;
+    ArrayList<Alerts> listaAlerts;
 
 
     public AlertsFragment() {
@@ -42,29 +44,30 @@ public class AlertsFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_alerts, container, false);
         recyclerAlerts = view.findViewById(R.id.recyclerAlerts);
-        listaPersonas = new ArrayList<>();
+        recyclerAlerts.setHasFixedSize(true);
+        listaAlerts = new ArrayList<>();
         cargarLista();
         mostrarData();
         return view;
     }
 
     public void cargarLista() {
-        listaPersonas.add(new Persona("User", "hola amigos de odoo!!", R.drawable.odoo));
-        listaPersonas.add(new Persona("User2", "holaaa!!", R.drawable.odoo));
-        listaPersonas.add(new Persona("User", "hola!!", R.drawable.odoo));
-        listaPersonas.add(new Persona("User2", "holaaa!!", R.drawable.odoo));
-        listaPersonas.add(new Persona("User", "hola!!", R.drawable.odoo));
-        listaPersonas.add(new Persona("User", "hola!!", R.drawable.odoo));
-        listaPersonas.add(new Persona("User", "hola!!", R.drawable.odoo));
-        listaPersonas.add(new Persona("User", "hola!!", R.drawable.odoo));
-        listaPersonas.add(new Persona("User", "hola!!", R.drawable.odoo));
+
+        listaAlerts.add(new Alerts("hola amigos de odoo!!", R.drawable.odoo));
+        listaAlerts.add(new Alerts("hola amigos de odoo!!", R.drawable.odoo));
+        listaAlerts.add(new Alerts("hola amigos de odoo!!", R.drawable.odoo));
+        listaAlerts.add(new Alerts("hola amigos de odoo!!", R.drawable.odoo));
+        listaAlerts.add(new Alerts("hola amigos de odoo!!", R.drawable.odoo));
+
+
 
     }
 
     public void mostrarData() {
+        recyclerAlerts.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
-        recyclerAlerts.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
-        adapterListas = new AdapterListas(getContext(), listaPersonas);
-        recyclerAlerts.setAdapter(adapterListas);
+        adapterAlert = new AlertsAdapter(getContext(), listaAlerts);
+        recyclerAlerts.setAdapter(adapterAlert);
+
     }
 }
