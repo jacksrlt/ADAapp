@@ -6,43 +6,39 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     app:cardCornerRadius="5dp"
-
     app:cardElevation="5dp"
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
+        android:id="@+id/clickRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:padding="10dp">
 
         <ImageView
             android:id="@+id/imagen"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@drawable/common_google_signin_btn_icon_disabled">
-
         </ImageView>
 
         <TextView
             android:id="@+id/nombreuser"
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imagen"
-
-            android:text="hola">
+            android:textStyle="bold"
+            android:text="Username">
 
         </TextView>
 
         <TextView
             android:id="@+id/textodentro"
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-
-            android:layout_marginBottom="0dp"
             android:layout_toRightOf="@id/imagen"
-            android:text="hola">
-
+            android:text="Message">
         </TextView>
 
     </RelativeLayout>
