@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,7 +26,8 @@ import java.util.Map;
 
 public class ForumFragment extends Fragment {
 
-    private DatabaseReference mDatabase;
+    private DatabaseReference postDatabase;
+    //private DatabaseReference userDatabase;
     AdapterListas adapterListas;
     private RecyclerView recyclerViewPersonas;
     ArrayList <Post> listaPersonas = new ArrayList<>();;
@@ -43,8 +42,7 @@ public class ForumFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        mDatabase = FirebaseDatabase.getInstance("https://adaapp-f73d9-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Messages");
+        postDatabase = FirebaseDatabase.getInstance("https://adaapp-f73d9-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Messages");
         View view =  inflater.inflate(R.layout.fragment_forum, container, false);
         recyclerViewPersonas = view.findViewById(R.id.recyclerPost);
         mostrarData();
@@ -55,7 +53,7 @@ public class ForumFragment extends Fragment {
 
     private void cargarLista(){
         listaPersonas.clear();
-        mDatabase.addChildEventListener(new ChildEventListener() {
+        postDatabase.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 allListData(dataSnapshot);
@@ -106,10 +104,11 @@ public class ForumFragment extends Fragment {
 
     public void dialogoProgreso() {
         progressDialog = new ProgressDialog(getContext());
-        progressDialog.setMessage("Loading....");
+        progressDialog.setMessage("Cargando...");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.setCancelable(false);
         progressDialog.setIndeterminate(false);
         progressDialog.show();
     }
+
 }

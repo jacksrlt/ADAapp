@@ -54,15 +54,19 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.MyViewHold
         Post recycleList = post.get(position);
         holder.user.setText(recycleList.getUseruid());
         holder.content.setText(recycleList.getMessage());
-        Glide.with(context).load(recycleList.getImage()).into(holder.avatar);
+        Glide.with(context)
+                .load(recycleList.getImage())
+                .placeholder(R.drawable.common_google_signin_btn_icon_disabled)
+                .circleCrop()
+                .into(holder.avatar);
 
 
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Post recycleList = post.get(position);
-                String name = recycleList.getUseruid();
-                Toast.makeText(context, "User Name : " + name, Toast.LENGTH_SHORT).show();
+                String user = recycleList.getUseruid();
+                Toast.makeText(context, "User Name : " + user, Toast.LENGTH_SHORT).show();
             }
 
         });
