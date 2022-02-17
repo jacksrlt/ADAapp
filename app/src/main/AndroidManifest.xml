@@ -11,9 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ADAapp">
         <activity
-            android:name=".PerfilActivity"
-            android:exported="true" />
-        <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity
