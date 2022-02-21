@@ -180,14 +180,21 @@
 " />
     </com.google.android.material.chip.ChipGroup>
 
-    <ImageButton
-        android:id="@+id/btGuardar"
-        android:layout_width="40dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/guardar"
-        app:layout_constraintStart_toEndOf="@+id/circleImageView"
+    <Button
+        android:onClick="guardar"
+        android:id="@+id/ReL"
+        android:layout_width="115dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#00FFFFFF"
+        android:fontFamily="monospace"
+        android:stateListAnimator="@null"
+        android:text="Guardar"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
