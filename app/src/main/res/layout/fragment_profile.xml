@@ -151,8 +151,8 @@
     <!--utiliza un fon do redondo para darle forma @drawable/button_redondo -->
     <Button
         android:id="@+id/btSubirImg"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginTop="108dp"
         android:background="@drawable/button_redondo"
         android:text="+"
@@ -164,11 +164,12 @@
 
 
     <!--    esto es el circleimageview-->
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="56dp"
         android:src="@drawable/usuaria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
