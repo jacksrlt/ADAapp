@@ -27,11 +27,14 @@ import android.widget.ImageView;
 
 import com.mijale.adaapp.R;
 
+import java.io.IOException;
+
 public class ProfileFragment extends Fragment {
 
 
     private static final int CAMERA_REQUEST = 1888;
     public static final int PICK_IMAGE = 1;
+    public static final int GALLERY_REQUEST = 1;
     Button btSubirImg;
     ImageView circleImageView;
 
@@ -54,14 +57,14 @@ public class ProfileFragment extends Fragment {
                 AlertDialog ad = new AlertDialog.Builder(getContext())
                         .create();
                 ad.setCancelable(false);
-                ad.setTitle("title");
-                ad.setButton("Abir Camara", new DialogInterface.OnClickListener() {
+                ad.setTitle("Fuente de imagen");
+                ad.setButton("Camara", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         abirCamara();
                     }
                 });
-                ad.setButton2("Abrir Galeria", new DialogInterface.OnClickListener() {
+                ad.setButton2("Galeria", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         abrirGaleria();
@@ -85,26 +88,30 @@ public class ProfileFragment extends Fragment {
         startActivityForResult(cameraIntent, CAMERA_REQUEST);
     }
 
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case 0:
-                if (resultCode == RESULT_OK) {
+        if (resultCode == Activity.RESULT_OK)
+            switch (requestCode) {
+                case GALLERY_REQUEST:
+                    Uri selectedImage;
+                    selectedImage = data.getData();
+                    circleImageView.setImageURI(selectedImage);
+                    break;
+                case CAMERA_REQUEST:
                     Bitmap photo = (Bitmap) data.getExtras().get("data");
                     circleImageView.setImageBitmap(photo);
-
-                }
-
-
-        }
+            }
     }
 
 
     private void abrirGaleria() {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
+
+        Intent gallery = new Intent(Intent.ACTION_PICK,
+                MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        startActivityForResult(gallery, PICK_IMAGE);
+
+
     }
 
 
