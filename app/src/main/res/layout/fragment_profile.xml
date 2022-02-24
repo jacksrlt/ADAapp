@@ -30,8 +30,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:hint="Correo"
-        app:layout_constraintTop_toBottomOf="@+id/etPais"
-        tools:layout_editor_absoluteX="81dp">
+        app:layout_constraintEnd_toEndOf="@+id/etPais"
+        app:layout_constraintStart_toStartOf="@+id/etPais"
+        app:layout_constraintTop_toBottomOf="@+id/etPais">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -62,8 +63,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etNombre"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="249dp"
-        android:layout_height="46dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:hint="Nombre de usuario"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
