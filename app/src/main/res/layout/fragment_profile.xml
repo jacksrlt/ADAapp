@@ -28,11 +28,10 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:hint="Correo"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/etPais">
+        app:layout_constraintTop_toBottomOf="@+id/etPais"
+        tools:layout_editor_absoluteX="81dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -47,10 +46,10 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:hint="Telefono"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="@+id/etCorreo"
+        app:layout_constraintStart_toStartOf="@+id/etCorreo"
         app:layout_constraintTop_toBottomOf="@+id/etCorreo">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -63,14 +62,13 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etNombre"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="249dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="40dp"
         android:hint="Nombre de usuario"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/chipGroup">
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -85,10 +83,10 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:hint="Pais"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="@+id/etNombre"
+        app:layout_constraintStart_toStartOf="@+id/etNombre"
         app:layout_constraintTop_toBottomOf="@+id/etNombre">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -99,63 +97,28 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroup"
-        style="@style/Widget.MaterialComponents.ChipGroup"
-        android:layout_width="246dp"
-        android:layout_height="28dp"
-
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintHorizontal_bias="0.41"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chHombre"
-            style="@style/Widget.MaterialComponents.Chip.Action"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hombre" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chMujer"
-            style="@style/Widget.MaterialComponents.Chip.Action"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mujer" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chOtro"
-            style="@style/Widget.MaterialComponents.Chip.Action"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Otr@
-" />
-    </com.google.android.material.chip.ChipGroup>
-
     <Button
         android:id="@+id/btSubirImg"
         android:layout_width="52dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="140dp"
         android:background="@drawable/button_redondo"
         android:text="+"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
         app:layout_constraintEnd_toEndOf="@+id/circleImageView"
-        app:layout_constraintHorizontal_bias="0.929"
-        app:layout_constraintStart_toStartOf="@+id/circleImageView" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/circleImageView"
+        app:layout_constraintTop_toTopOf="@+id/circleImageView" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etOficio"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:hint="Oficio"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="@+id/etTelefono"
+        app:layout_constraintStart_toStartOf="@+id/etTelefono"
         app:layout_constraintTop_toBottomOf="@+id/etTelefono">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -166,24 +129,12 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="44dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="monospace"
-        android:text="Soy:"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
-
     <Button
         android:id="@+id/ReL"
         android:layout_width="115dp"
         android:layout_height="36dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="#00FFFFFF"
         android:fontFamily="monospace"
         android:onClick="guardar"
