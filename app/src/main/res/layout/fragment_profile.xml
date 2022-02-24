@@ -12,6 +12,25 @@
 
     <!--    esto es el circleimageview-->
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etlink"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="Link Github"
+        app:layout_constraintEnd_toEndOf="@+id/etOficio"
+        app:layout_constraintStart_toStartOf="@+id/etOficio"
+        app:layout_constraintTop_toBottomOf="@+id/etOficio">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView"
         android:layout_width="209dp"
@@ -28,7 +47,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:hint="Correo"
         app:layout_constraintEnd_toEndOf="@+id/etPais"
         app:layout_constraintStart_toStartOf="@+id/etPais"
@@ -47,7 +66,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:hint="Telefono"
         app:layout_constraintEnd_toEndOf="@+id/etCorreo"
         app:layout_constraintStart_toStartOf="@+id/etCorreo"
@@ -65,9 +84,10 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:hint="Nombre de usuario"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/circleImageView">
 
@@ -84,7 +104,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:hint="Pais"
         app:layout_constraintEnd_toEndOf="@+id/etNombre"
         app:layout_constraintStart_toStartOf="@+id/etNombre"
@@ -116,7 +136,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:hint="Oficio"
         app:layout_constraintEnd_toEndOf="@+id/etTelefono"
         app:layout_constraintStart_toStartOf="@+id/etTelefono"
@@ -131,10 +151,10 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/ReL"
+        android:id="@+id/btGuardar"
         android:layout_width="115dp"
         android:layout_height="36dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#00FFFFFF"
         android:fontFamily="monospace"

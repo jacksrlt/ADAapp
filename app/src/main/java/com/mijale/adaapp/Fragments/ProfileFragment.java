@@ -35,7 +35,7 @@ public class ProfileFragment extends Fragment {
     private static final int CAMERA_REQUEST = 1888;
     public static final int PICK_IMAGE = 1;
     public static final int GALLERY_REQUEST = 1;
-    Button btSubirImg;
+    Button btSubirImg,btguardar;
     ImageView circleImageView;
 
     public ProfileFragment() {
@@ -47,7 +47,7 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-
+        btguardar=view.findViewById(R.id.btGuardar);
         btSubirImg = view.findViewById(R.id.btSubirImg);
         circleImageView = view.findViewById(R.id.circleImageView);
 
