@@ -14,7 +14,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="44dp"
         android:hint="Usuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/loginUser"
-            android:layout_width="match_parent"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
@@ -37,7 +37,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="32dp"
         android:hint="Contraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/loginPassword"
-            android:layout_width="match_parent"
+            android:layout_width="240dp
+"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
@@ -56,68 +57,69 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <TextView
         android:id="@+id/loginWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="monospace"
         android:text="Bienvenid@"
         android:textAlignment="center"
         android:textColor="#0B0A0A"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textField1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/EnL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="48dp"
         android:backgroundTint="#0CFFFFFF"
         android:fontFamily="monospace"
         android:stateListAnimator="@null"
-        android:text="Iniciar Sesión"
+        android:text="Login"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textField2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textField2" />
 
     <Button
         android:id="@+id/ReL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="167dp"
+        android:layout_height="39dp"
         android:backgroundTint="#00FFFFFF"
         android:fontFamily="monospace"
         android:stateListAnimator="@null"
         android:text="Registrar"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/EnL"
-        app:layout_constraintTop_toBottomOf="@+id/EnL" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InL"
+        app:layout_constraintVertical_bias="0.712" />
 
     <Button
         android:id="@+id/InL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
+        android:layout_marginTop="36dp"
         android:backgroundTint="#00FFFFFF"
         android:fontFamily="monospace"
         android:stateListAnimator="@null"
         android:text="Entrar como invitado"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="12sp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnL" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
