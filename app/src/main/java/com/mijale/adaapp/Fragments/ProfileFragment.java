@@ -23,9 +23,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Gallery;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.mijale.adaapp.LoginActivity;
+import com.mijale.adaapp.MainActivity;
+import com.mijale.adaapp.Prefil;
 import com.mijale.adaapp.R;
+import com.mijale.adaapp.SplashScreen;
 
 import java.io.IOException;
 
@@ -35,8 +40,9 @@ public class ProfileFragment extends Fragment {
     private static final int CAMERA_REQUEST = 1888;
     public static final int PICK_IMAGE = 1;
     public static final int GALLERY_REQUEST = 1;
-    Button btSubirImg,btguardar;
+    Button btSubirImg,btguardar ;
     ImageView circleImageView;
+    ImageButton Editar;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -47,38 +53,48 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        Editar=view.findViewById(R.id.btEditar);
         btguardar=view.findViewById(R.id.btGuardar);
         btSubirImg = view.findViewById(R.id.btSubirImg);
         circleImageView = view.findViewById(R.id.circleImageView);
 
-        btSubirImg.setOnClickListener(new View.OnClickListener() {
+        // onclick para ir
+        Editar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog ad = new AlertDialog.Builder(getContext())
-                        .create();
-                ad.setCancelable(false);
-                ad.setTitle("Foto de perfil");
-                ad.setButton("Camara", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        abirCamara();
-                    }
-                });
-                ad.setButton2("Galeria", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        abrirGaleria();
-                    }
-                });
-
-
-                ad.show();
-
+                Intent intent = new Intent(getContext(), Prefil.class);
+                startActivity(intent);
             }
         });
 
+//        btSubirImg.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                AlertDialog ad = new AlertDialog.Builder(getContext())
+//                        .create();
+//                ad.setCancelable(false);
+//                ad.setTitle("Foto de perfil");
+//                ad.setButton("Camara", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        abirCamara();
+//                    }
+//                });
+//                ad.setButton2("Galeria", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        abrirGaleria();
+//                    }
+//                });
+//
+//
+//                ad.show();
+//
+//            }
+//        });
 
-        return view;
+
+        //return view;
 
 
     }
