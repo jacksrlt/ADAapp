@@ -1,5 +1,6 @@
 package com.mijale.adaapp;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         registro = findViewById(R.id.ReL);
         iniciarSesion = findViewById(R.id.EnL);
 
+
         //Onclick Listener para pantalla de registro
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,14 +56,13 @@ public class LoginActivity extends AppCompatActivity {
         //Onclick Listener en Botón de inicio de sesión
         iniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 loginUserAccount();
             }
         });
 
 
-        invitado=findViewById(R.id.InL);
+      /* // invitado=findViewById(R.id.InL);
         invitado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,10 +70,10 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        });
+        });*/
     }
 
-    private void loginAnon () {
+    private void loginAnon() {
         mAuth.signInAnonymously()
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -80,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("anonSuccess", "signInAnonymously:success");
-                            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
                         } else {
@@ -94,9 +95,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
-    private void loginUserAccount()
-    {
+    private void loginUserAccount() {
         //Tomar los valores de los EditText como String
         String email, password;
         email = emailTextView.getText().toString();
@@ -125,8 +124,7 @@ public class LoginActivity extends AppCompatActivity {
                         new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(
-                                    @NonNull Task<AuthResult> task)
-                            {
+                                    @NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(),
                                             "Bienvenid@",
@@ -140,9 +138,7 @@ public class LoginActivity extends AppCompatActivity {
                                             MainActivity.class);
                                     startActivity(intent);
                                     finish();
-                                }
-
-                                else {
+                                } else {
 
                                     //Inicio de sesión fallido
                                     Toast.makeText(getApplicationContext(),
