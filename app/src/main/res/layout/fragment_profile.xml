@@ -13,21 +13,21 @@
     <!--    esto es el circleimageview-->
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/Link"
+        android:id="@+id/tvLink"
         android:layout_width="240dp"
         android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:text="https://github.com/jacksrlt/ADAapp"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/Oficio"
-        app:layout_constraintStart_toStartOf="@+id/Oficio"
-        app:layout_constraintTop_toBottomOf="@+id/Oficio">
+        app:layout_constraintEnd_toEndOf="@+id/tvOficio"
+        app:layout_constraintStart_toStartOf="@+id/tvOficio"
+        app:layout_constraintTop_toBottomOf="@+id/tvOficio">
 
     </com.google.android.material.textview.MaterialTextView>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/Oficio"
+        android:id="@+id/tvOficio"
         android:layout_width="240dp"
         android:layout_height="28dp"
         android:layout_marginTop="24dp"
@@ -138,7 +138,7 @@
         app:layout_constraintGuide_percent="0.95" />
 
     <ImageButton
-        android:id="@+id/btEditar"
+        android:id="@+id/btEdit"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="216dp"

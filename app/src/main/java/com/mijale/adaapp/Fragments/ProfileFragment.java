@@ -4,8 +4,10 @@ import static android.app.Activity.RESULT_OK;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,6 +27,7 @@ import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.mijale.adaapp.LoginActivity;
 import com.mijale.adaapp.MainActivity;
@@ -37,12 +40,13 @@ import java.io.IOException;
 public class ProfileFragment extends Fragment {
 
 
-    private static final int CAMERA_REQUEST = 1888;
-    public static final int PICK_IMAGE = 1;
-    public static final int GALLERY_REQUEST = 1;
-    Button btSubirImg,btguardar ;
-    ImageView circleImageView;
-    ImageButton Editar;
+//    private static final int CAMERA_REQUEST = 1888;
+//    public static final int PICK_IMAGE = 1;
+//    public static final int GALLERY_REQUEST = 1;
+    private TextView tvNombre,tvPais,tvCorreo,tvTelefono,tvOficio,tvLink;
+    private String nombre,pais,link,correo,oficio,telefono;
+    private ImageView circleImageView;
+    private ImageButton Editar;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -53,12 +57,41 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        Editar=view.findViewById(R.id.btEditar);
-        btguardar=view.findViewById(R.id.btGuardar);
-        btSubirImg = view.findViewById(R.id.btSubirImg);
-        circleImageView = view.findViewById(R.id.circleImageView);
+        Editar=view.findViewById(R.id.btEdit);
 
-        // onclick para ir
+//        View contexto= view ;
+//        SharedPreferences shpref = getActivity().getPreferences(contexto.MODE_PRIVATE);
+        //btguardar=view.findViewById(R.id.btGuardar);
+        //btSubirImg = view.findViewById(R.id.btSubirImg);
+        circleImageView = view.findViewById(R.id.circleImageView);
+        tvNombre=view.findViewById(R.id.tvNombre);
+        tvPais=view.findViewById(R.id.tvPais);
+        tvCorreo=view.findViewById(R.id.tvCorreo);
+        tvTelefono=view.findViewById(R.id.tvTelefono);
+        tvOficio=view.findViewById(R.id.tvOficio);
+        tvLink=view.findViewById(R.id.tvLink);
+
+
+//// esto es para inte
+//        SharedPreferences shpref =getPreferences(context.MODE_PRIVATE);
+//        nombre=shpref.getString("datoNombre","No hay dato");
+//        pais=shpref.getString("datoPais","No hay dato");
+//        correo=shpref.getString("datoCorreo","No hay dato");
+//        telefono=shpref.getString("datoTelefono","No hay dato");
+//        oficio=shpref.getString("datoOficio","No hay dato");
+//        link=shpref.getString("datoLink","No hay dato");
+
+        tvNombre.getText(nombre);
+        tvPais.getText(pais);
+        tvCorreo.getText(correo);
+        tvTelefono.getText(telefono);
+        tvOficio.getText(oficio);
+        tvLink.getText(link);
+
+
+
+
+        // onclick para ir a perfil
         Editar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,41 +127,41 @@ public class ProfileFragment extends Fragment {
 //        });
 
 
-        //return view;
+        return view;
 
 
     }
 
-    private void abirCamara() {
-        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(cameraIntent, CAMERA_REQUEST);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == Activity.RESULT_OK)
-            switch (requestCode) {
-                case GALLERY_REQUEST:
-                    Uri selectedImage;
-                    selectedImage = data.getData();
-                    circleImageView.setImageURI(selectedImage);
-                    break;
-                case CAMERA_REQUEST:
-                    Bitmap photo = (Bitmap) data.getExtras().get("data");
-                    circleImageView.setImageBitmap(photo);
-            }
-    }
-
-
-    private void abrirGaleria() {
-
-        Intent gallery = new Intent(Intent.ACTION_PICK,
-                MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        startActivityForResult(gallery, PICK_IMAGE);
-
-
-    }
+//    private void abirCamara() {
+//        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+//        startActivityForResult(cameraIntent, CAMERA_REQUEST);
+//    }
+//
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (resultCode == Activity.RESULT_OK)
+//            switch (requestCode) {
+//                case GALLERY_REQUEST:
+//                    Uri selectedImage;
+//                    selectedImage = data.getData();
+//                    circleImageView.setImageURI(selectedImage);
+//                    break;
+//                case CAMERA_REQUEST:
+//                    Bitmap photo = (Bitmap) data.getExtras().get("data");
+//                    circleImageView.setImageBitmap(photo);
+//            }
+//    }
+//
+//
+//    private void abrirGaleria() {
+//
+//        Intent gallery = new Intent(Intent.ACTION_PICK,
+//                MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+//        startActivityForResult(gallery, PICK_IMAGE);
+//
+//
+//    }
 
 
 }
