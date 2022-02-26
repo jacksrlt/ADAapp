@@ -1,45 +1,22 @@
 package com.mijale.adaapp.Fragments;
 
-import static android.app.Activity.RESULT_OK;
-
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.preference.PreferenceManager;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Gallery;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.mijale.adaapp.LoginActivity;
-import com.mijale.adaapp.MainActivity;
-import com.mijale.adaapp.Prefil;
+import com.mijale.adaapp.Perfil;
 import com.mijale.adaapp.R;
-import com.mijale.adaapp.SplashScreen;
-
-import java.io.IOException;
-import java.sql.Struct;
 
 public class ProfileFragment extends Fragment {
 
@@ -96,7 +73,7 @@ public class ProfileFragment extends Fragment {
         btEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), Prefil.class);
+                Intent intent = new Intent(getContext(), Perfil.class);
                 startActivity(intent);
             }
         });

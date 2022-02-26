@@ -1,30 +1,25 @@
 package com.mijale.adaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.mijale.adaapp.Fragments.ProfileFragment;
 
-public class Prefil extends AppCompatActivity {
+public class Perfil extends AppCompatActivity {
     private static final int CAMERA_REQUEST = 1888;
     public static final int PICK_IMAGE = 1;
     public static final int GALLERY_REQUEST = 1;
@@ -68,7 +63,7 @@ public class Prefil extends AppCompatActivity {
         btSubirImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog ad = new AlertDialog.Builder(Prefil.this)
+                AlertDialog ad = new AlertDialog.Builder(Perfil.this)
                         .create();
                 ad.setCancelable(false);
                 ad.setTitle("Fuente de imagen");
