@@ -5,29 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Prefil">
-    <!--utiliza un fon do redondo para darle forma @drawable/button_redondo -->
 
-
-    <!--    esto es el circleimageview-->
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etlink"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:hint="Link Github"
-        app:layout_constraintEnd_toEndOf="@+id/etOficio"
-        app:layout_constraintStart_toStartOf="@+id/etOficio"
-        app:layout_constraintTop_toBottomOf="@+id/etOficio">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text" />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView"
@@ -40,37 +18,34 @@
 
     </de.hdodenhof.circleimageview.CircleImageView>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etCorreo"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:hint="Correo"
-        app:layout_constraintEnd_toEndOf="@+id/etPais"
-        app:layout_constraintStart_toStartOf="@+id/etPais"
-        app:layout_constraintTop_toBottomOf="@+id/etPais">
+    <Button
+        android:id="@+id/btSubirImg"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/button_redondo"
+        android:text="+"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/circleImageView"
+        app:layout_constraintHorizontal_bias="0.878"
+        app:layout_constraintStart_toStartOf="@+id/circleImageView"
+        app:layout_constraintTop_toTopOf="@+id/circleImageView" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress" />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etTelefono"
+
+        android:id="@+id/textInputLayout6"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:hint="Telefono"
-        app:layout_constraintEnd_toEndOf="@+id/etCorreo"
-        app:layout_constraintStart_toStartOf="@+id/etCorreo"
-        app:layout_constraintTop_toBottomOf="@+id/etCorreo">
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone" />
@@ -78,7 +53,8 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etNombre"
+
+        android:id="@+id/textInputLayout3"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -90,6 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/circleImageView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -98,17 +75,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etPais"
+
+        android:id="@+id/textInputLayout4"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:hint="Pais"
-        app:layout_constraintEnd_toEndOf="@+id/etNombre"
-        app:layout_constraintStart_toStartOf="@+id/etNombre"
-        app:layout_constraintTop_toBottomOf="@+id/etNombre">
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPais"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -116,31 +95,60 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/btSubirImg"
-        android:layout_width="52dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="140dp"
-        android:background="@drawable/button_redondo"
-        android:text="+"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/circleImageView"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/circleImageView"
-        app:layout_constraintTop_toTopOf="@+id/circleImageView" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout5"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="Correo"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etOficio"
+        android:id="@+id/textInputLayout7"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:hint="Oficio"
-        app:layout_constraintEnd_toEndOf="@+id/etTelefono"
-        app:layout_constraintStart_toStartOf="@+id/etTelefono"
-        app:layout_constraintTop_toBottomOf="@+id/etTelefono">
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etOficio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="Link Github"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etGithub"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -152,11 +160,10 @@
         android:id="@+id/btGuardar"
         android:layout_width="115dp"
         android:layout_height="36dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
         android:backgroundTint="#00FFFFFF"
         android:fontFamily="monospace"
-
         android:stateListAnimator="@null"
         android:text="Guardar"
         android:textColor="#000000"

@@ -12,81 +12,12 @@
 
     <!--    esto es el circleimageview-->
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvLink"
-        android:layout_width="240dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:text="https://github.com/jacksrlt/ADAapp"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvOficio"
-        app:layout_constraintStart_toStartOf="@+id/tvOficio"
-        app:layout_constraintTop_toBottomOf="@+id/tvOficio">
-
-    </com.google.android.material.textview.MaterialTextView>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvOficio"
-        android:layout_width="240dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="24dp"
-        android:text="Desarrollo de software"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvTelefono"
-        app:layout_constraintStart_toStartOf="@+id/tvTelefono"
-        app:layout_constraintTop_toBottomOf="@+id/tvTelefono">
-
-    </com.google.android.material.textview.MaterialTextView>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvCorreo"
-        android:layout_width="240dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="24dp"
-        android:text="Correorandom@gmail.com"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvPais"
-        app:layout_constraintStart_toStartOf="@+id/tvPais"
-        app:layout_constraintTop_toBottomOf="@+id/tvPais">
-
-    </com.google.android.material.textview.MaterialTextView>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvTelefono"
-        android:layout_width="240dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="24dp"
-        android:text="672462364"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvCorreo"
-        app:layout_constraintStart_toStartOf="@+id/tvCorreo"
-        app:layout_constraintTop_toBottomOf="@+id/tvCorreo">
-
-    </com.google.android.material.textview.MaterialTextView>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvPais"
-        android:layout_width="240dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="24dp"
-        android:text="Pais"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvNombre"
-        app:layout_constraintStart_toStartOf="@+id/tvNombre"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombre">
-
-    </com.google.android.material.textview.MaterialTextView>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView"
         android:layout_width="209dp"
         android:layout_height="189dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:src="@drawable/usuaria"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -95,19 +26,108 @@
     </de.hdodenhof.circleimageview.CircleImageView>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvNombre"
+        android:id="@+id/tvCorreo"
         android:layout_width="240dp"
-        android:layout_height="28dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="monospace"
+        android:text="Correorandom@gmail.com"
+
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvPais"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvPais"
+        app:layout_constraintTop_toBottomOf="@+id/tvPais">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvLink"
+        android:layout_width="290dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="monospace"
+        android:text="https://github.com/jacksrlt/ADAapp"
+
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvOficio"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="@+id/tvOficio"
+        app:layout_constraintTop_toBottomOf="@+id/tvOficio">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTelefono"
+        android:layout_width="240dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="monospace"
+        android:text="672462364"
+
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvCorreo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvCorreo"
+        app:layout_constraintTop_toBottomOf="@+id/tvCorreo">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvOficio"
+        android:layout_width="240dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="48dp"
+        android:text="Desarrollo de software"
+
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvTelefono"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/tvTelefono">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvPais"
+        android:layout_width="240dp"
+        android:layout_height="45dp"
         android:layout_marginTop="40dp"
+        android:fontFamily="monospace"
+        android:text="Pais"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvNombre"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvNombre"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombre">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvNombre"
+
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="monospace"
         android:text="Nombre"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/circleImageView">
 
     </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -141,11 +161,11 @@
         android:id="@+id/btEdit"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="216dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
         android:scaleType="fitCenter"
         android:src="@drawable/editar"
-        app:layout_constraintStart_toStartOf="@+id/circleImageView"
-        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
