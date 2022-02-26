@@ -147,6 +147,34 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+        final MainActivity ma = (MainActivity) getActivity();
+        SharedPreferences sp = ma.getSharedPreferences("SP", ma.MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sp.edit();
+        final Switch swi = view.findViewById(R.id.switchTema);
+
+        int theme = sp.getInt("Theme", 1);
+        if(theme==1){
+            swi.setChecked(false);
+        }
+        else{
+            swi.setChecked(true);
+        }
+
+        swi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(swi.isChecked()){
+                    editor.putInt("Theme", 0);
+                }
+                else{
+                    editor.putInt("Theme", 1);
+                }
+                editor.commit();
+                ma.setDayNight();
+            }
+        });
+
+
 
         return view;
     }
