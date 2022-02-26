@@ -26,33 +26,17 @@
     </de.hdodenhof.circleimageview.CircleImageView>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvCorreo"
+        android:id="@+id/tvPais"
         android:layout_width="240dp"
         android:layout_height="45dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="monospace"
-        android:text="Correorandom@gmail.com"
-
+        android:text="Pais"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvPais"
+        app:layout_constraintEnd_toEndOf="@+id/tvNombre"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvPais"
-        app:layout_constraintTop_toBottomOf="@+id/tvPais">
-
-    </com.google.android.material.textview.MaterialTextView>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvLink"
-        android:layout_width="290dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="monospace"
-        android:text="https://github.com/jacksrlt/ADAapp"
-
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvOficio"
-        app:layout_constraintStart_toStartOf="@+id/tvOficio"
-        app:layout_constraintTop_toBottomOf="@+id/tvOficio">
+        app:layout_constraintStart_toStartOf="@+id/tvNombre"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombre">
 
     </com.google.android.material.textview.MaterialTextView>
 
@@ -60,7 +44,7 @@
         android:id="@+id/tvTelefono"
         android:layout_width="240dp"
         android:layout_height="45dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="52dp"
         android:fontFamily="monospace"
         android:text="672462364"
 
@@ -73,10 +57,26 @@
     </com.google.android.material.textview.MaterialTextView>
 
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvLink"
+        android:layout_width="290dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="monospace"
+        android:text="https://github.com/jacksrlt/ADAapp"
+
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvOficio"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@+id/tvOficio"
+        app:layout_constraintTop_toBottomOf="@+id/tvOficio">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvOficio"
         android:layout_width="240dp"
         android:layout_height="45dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="44dp"
         android:text="Desarrollo de software"
 
         android:textSize="16sp"
@@ -88,17 +88,18 @@
     </com.google.android.material.textview.MaterialTextView>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvPais"
+        android:id="@+id/tvCorreo"
         android:layout_width="240dp"
         android:layout_height="45dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="44dp"
         android:fontFamily="monospace"
-        android:text="Pais"
+        android:text="Correorandom@gmail.com"
+
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvNombre"
+        app:layout_constraintEnd_toEndOf="@+id/tvPais"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvNombre"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombre">
+        app:layout_constraintStart_toStartOf="@+id/tvPais"
+        app:layout_constraintTop_toBottomOf="@+id/tvPais">
 
     </com.google.android.material.textview.MaterialTextView>
 

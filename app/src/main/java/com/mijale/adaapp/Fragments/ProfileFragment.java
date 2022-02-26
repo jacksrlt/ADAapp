@@ -55,7 +55,7 @@ public class ProfileFragment extends Fragment {
     private ImageView circleImageView;
     private ImageButton btEdit;
     Button btSubirImg, btguardar;
-    ImageView circleImageView;
+
 
 
     public ProfileFragment() {
