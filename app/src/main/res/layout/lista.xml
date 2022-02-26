@@ -18,18 +18,17 @@
         <ImageView
             android:id="@+id/imagen"
             android:layout_width="62dp"
-            android:layout_height="62dp"
-            />
+            android:layout_height="62dp" />
 
         <TextView
             android:id="@+id/nombreuser"
             android:layout_width="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:textSize="11dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
             android:layout_toRightOf="@id/imagen"
-            android:textStyle="bold"
-            android:text="Username">
+            android:text="Username"
+            android:textSize="11dp"
+            android:textStyle="bold">
 
         </TextView>
 
@@ -41,9 +40,8 @@
             android:layout_marginTop="24dp"
             android:layout_toRightOf="@id/imagen"
             android:maxLength="350"
-            android:textSize="16dp"
-            android:text="Message">
-        </TextView>
+            android:text="Message"
+            android:textSize="16dp" />
 
     </RelativeLayout>
 

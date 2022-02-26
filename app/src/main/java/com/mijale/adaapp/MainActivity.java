@@ -2,8 +2,10 @@ package com.mijale.adaapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -28,7 +30,20 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(bottomNavMethod);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new ForumFragment()).commit();
+//necesario para el modo noche
+        setDayNight();
     }
+   //metodo modo noche
+    public void setDayNight(){
+        SharedPreferences sp = getSharedPreferences("SP", this.MODE_PRIVATE);
+        int theme = sp.getInt("Theme", 1);
+        if(theme==0){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        else{
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+    }//fin metodo
 
     private NavigationBarView.OnItemSelectedListener bottomNavMethod =
             new NavigationBarView.OnItemSelectedListener() {

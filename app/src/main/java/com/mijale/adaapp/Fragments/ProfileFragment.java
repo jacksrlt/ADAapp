@@ -47,12 +47,16 @@ public class ProfileFragment extends Fragment {
     private static final int CAMERA_REQUEST = 1888;
     public static final int PICK_IMAGE = 1;
     public static final int GALLERY_REQUEST = 1;
+
     SharedPreferences.Editor editor;
     SharedPreferences preferences;
     private TextView tvNombre, tvPais, tvCorreo, tvTelefono, tvOficio, tvLink;
     private String nombre, pais, link, correo, oficio, telefono;
     private ImageView circleImageView;
     private ImageButton btEdit;
+    Button btSubirImg, btguardar;
+    ImageView circleImageView;
+
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -66,6 +70,9 @@ public class ProfileFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         preferences = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        btguardar = view.findViewById(R.id.btGuardar);
+        btSubirImg = view.findViewById(R.id.btSubirImg);
+        circleImageView = view.findViewById(R.id.circleImageView);
 
 
 
