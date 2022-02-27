@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -25,6 +26,7 @@ public class Perfil extends AppCompatActivity {
     public static final int GALLERY_REQUEST = 1;
     private Button btSubirImg, btguardar;
     private ImageView circleImageView;
+    private ImageButton Volver;
     SharedPreferences.Editor editor;
     SharedPreferences preferences;
     private TextInputEditText etNombre, etPais, etTelefono, etCorreo, etOficio, etGithub;
@@ -35,6 +37,7 @@ public class Perfil extends AppCompatActivity {
         setContentView(R.layout.activity_prefil);
 
         etOficio = findViewById(R.id.etOficio);
+        Volver = findViewById(R.id.Volver);
         etGithub = findViewById(R.id.etGithub);
         etTelefono = findViewById(R.id.etTelefono);
         etCorreo = findViewById(R.id.etCorreo);
@@ -58,6 +61,12 @@ public class Perfil extends AppCompatActivity {
             }
 
 
+        });
+        Volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
         });
 
         btSubirImg.setOnClickListener(new View.OnClickListener() {

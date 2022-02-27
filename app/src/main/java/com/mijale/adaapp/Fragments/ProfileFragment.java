@@ -30,8 +30,7 @@ public class ProfileFragment extends Fragment {
     private TextView tvNombre, tvPais, tvCorreo, tvTelefono, tvOficio, tvLink;
     private String nombre, pais, link, correo, oficio, telefono;
     private ImageView circleImageView;
-    private ImageButton btEdit;
-    Button btSubirImg, btguardar;
+    Button btSubirImg, btguardar, btEditar;
 
 
 
@@ -47,13 +46,13 @@ public class ProfileFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         preferences = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-        btguardar = view.findViewById(R.id.btGuardar);
+        btEditar = view.findViewById(R.id.btEditar);
         btSubirImg = view.findViewById(R.id.btSubirImg);
         circleImageView = view.findViewById(R.id.circleImageView);
 
 
 
-        btEdit = view.findViewById(R.id.btEdit);
+
         circleImageView = view.findViewById(R.id.circleImageView);
         tvNombre = view.findViewById(R.id.tvNombre);
         tvPais = view.findViewById(R.id.tvPais);
@@ -70,7 +69,7 @@ public class ProfileFragment extends Fragment {
 
 
         // onclick para ir a perfil
-        btEdit.setOnClickListener(new View.OnClickListener() {
+        btEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), Perfil.class);

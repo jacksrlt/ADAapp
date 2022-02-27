@@ -46,6 +46,7 @@ public class ForumFragment extends Fragment {
         postDatabase = FirebaseDatabase.getInstance("https://adaapp-f73d9-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Messages");
         View view = inflater.inflate(R.layout.fragment_forum, container, false);
         recyclerViewPersonas = view.findViewById(R.id.recyclerPost);
+
         mostrarData();
         cargarLista();
         dialogoProgreso();

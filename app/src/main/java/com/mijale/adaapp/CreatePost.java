@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +28,7 @@ import com.mijale.adaapp.Fragments.Post;
 public class CreatePost extends AppCompatActivity {
 
     private Button btEnviarPost;
+    private ImageButton Volver;
     private EditText etPost;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -45,6 +47,7 @@ public class CreatePost extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
 
         btEnviarPost = findViewById(R.id.btEnviarPost);
+        Volver = findViewById(R.id.Volver);
         etPost = findViewById(R.id.etPost);
 
 
@@ -58,9 +61,17 @@ public class CreatePost extends AppCompatActivity {
                 SendPost sendPost = new SendPost(useruid, message);
 
                 databaseReference.push().setValue(sendPost);
+                Toast.makeText(CreatePost.this, "Post creado", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
 
+        Volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
