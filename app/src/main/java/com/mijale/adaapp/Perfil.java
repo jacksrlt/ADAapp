@@ -131,10 +131,10 @@ public class Perfil extends AppCompatActivity {
         String oficio = etOficio.getText().toString();
         String gitHub = etGithub.getText().toString();
         editor.putString("nombre","@"+ nombre);
-        editor.putString("pais", "Pais:  "+pais);
+        editor.putString("pais", "Pais: "+pais);
         editor.putString("correo", "Correo: " + correo);
         editor.putString("telefono","Telefono:" +telefono);
-        editor.putString("oficio","Trabaja en : "+ oficio);
+        editor.putString("oficio","Trabaja de: "+ oficio);
         editor.putString("gitHub", "Github: "+ gitHub);
         editor.commit();
     }
