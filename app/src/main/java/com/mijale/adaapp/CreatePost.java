@@ -34,7 +34,7 @@ public class CreatePost extends AppCompatActivity {
     DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
     private FirebaseFirestore fStore;
-    String message, useruid, userID;
+    String message, useruid, userID, image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,16 +51,36 @@ public class CreatePost extends AppCompatActivity {
         etPost = findViewById(R.id.etPost);
 
 
-
         btEnviarPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                useruid = mAuth.getCurrentUser().getUid();
-                message = etPost.getText().toString();
-                SendPost sendPost = new SendPost(useruid, message);
-
-                databaseReference.push().setValue(sendPost);
+                DocumentReference docRef = fStore.collection("users").document(mAuth.getCurrentUser().getUid());
+                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                useruid = document.getString("username").toString();
+                                image = document.getString("image").toString();
+                                message = etPost.getText().toString();
+                                SendPost sendPost = new SendPost(useruid, message, image);
+                                databaseReference.push().setValue(sendPost);
+                            } else {
+                                useruid = "NOTFOUND";
+                                message = etPost.getText().toString();
+                                SendPost sendPost = new SendPost(useruid, message, image);
+                                databaseReference.push().setValue(sendPost);
+                            }
+                        } else {
+                            useruid = "NOTFOUND";
+                            message = etPost.getText().toString();
+                            SendPost sendPost = new SendPost(useruid, message, image);
+                            databaseReference.push().setValue(sendPost);
+                        }
+                    }
+                });
                 Toast.makeText(CreatePost.this, "Post creado", Toast.LENGTH_SHORT).show();
                 finish();
             }
