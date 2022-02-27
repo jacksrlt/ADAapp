@@ -30,8 +30,8 @@ public class CreatePost extends AppCompatActivity {
     private EditText etPost;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    FirebaseFirestore fStore;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore fStore;
     String message, useruid, userID;
 
     @Override
@@ -40,7 +40,6 @@ public class CreatePost extends AppCompatActivity {
         setContentView(R.layout.activity_create_post);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        fStore = FirebaseFirestore.getInstance();
         databaseReference = firebaseDatabase.getInstance("https://adaapp-f73d9-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Messages");
         mAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -54,37 +53,11 @@ public class CreatePost extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                DocumentReference docRef = fStore.collection("users").document(mAuth.getCurrentUser().getUid());
-                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                useruid = document.getString("username").toString();
-                                message = etPost.getText().toString();
-                                SendPost sendPost = new SendPost(useruid, message);
-                                databaseReference.push().setValue(sendPost);
-                            } else {
-                                useruid = "NOTFOUND";
-                                message = etPost.getText().toString();
-                                SendPost sendPost = new SendPost(useruid, message);
-                                databaseReference.push().setValue(sendPost);
-                            }
-                        } else {
-                            useruid = "NOTFOUND";
-                            message = etPost.getText().toString();
-                            SendPost sendPost = new SendPost(useruid, message);
-                            databaseReference.push().setValue(sendPost);
-                        }
-                    }
-                });
+                useruid = mAuth.getCurrentUser().getUid();
+                message = etPost.getText().toString();
+                SendPost sendPost = new SendPost(useruid, message);
 
-                //useruid = mAuth.getCurrentUser().getUid();
-                //message = etPost.getText().toString();
-                //SendPost sendPost = new SendPost(useruid, message);
-
-                //databaseReference.push().setValue(sendPost);
+                databaseReference.push().setValue(sendPost);
             }
         });
 
