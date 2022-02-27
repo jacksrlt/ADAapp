@@ -133,18 +133,12 @@ public class Perfil extends AppCompatActivity {
 
     private void guardarDatos() {
         SharedPreferences.Editor editor = preferences.edit();
-        String nombre = etNombre.getText().toString();
-        String pais = etPais.getText().toString();
-        String correo = etCorreo.getText().toString();
-        String telefono = etTelefono.getText().toString();
-        String oficio = etOficio.getText().toString();
-        String gitHub = etGithub.getText().toString();
-        editor.putString("nombre","@"+ nombre);
-        editor.putString("pais", "Pais: "+pais);
-        editor.putString("correo", "Correo: " + correo);
-        editor.putString("telefono","Telefono:" +telefono);
-        editor.putString("oficio","Trabaja de: "+ oficio);
-        editor.putString("gitHub", "Github: "+ gitHub);
+        editor.putString("nombre","@"+ etNombre.getText().toString());
+        editor.putString("pais", "Pais: "+etPais.getText().toString());
+        editor.putString("correo", "Correo: " + etCorreo.getText().toString());
+        editor.putString("telefono","Telefono:" +etTelefono.getText().toString());
+        editor.putString("oficio","Trabaja de: "+ etOficio.getText().toString());
+        editor.putString("gitHub", "Github: "+ etGithub.getText().toString());
         editor.commit();
     }
 

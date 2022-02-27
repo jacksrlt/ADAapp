@@ -27,11 +27,12 @@ public class ProfileFragment extends Fragment {
 
     SharedPreferences.Editor editor;
     SharedPreferences preferences;
+
+
     private TextView tvNombre, tvPais, tvCorreo, tvTelefono, tvOficio, tvLink;
     private String nombre, pais, link, correo, oficio, telefono;
     private ImageView circleImageView;
     Button btSubirImg, btguardar, btEditar;
-
 
 
     public ProfileFragment() {
@@ -51,8 +52,6 @@ public class ProfileFragment extends Fragment {
         circleImageView = view.findViewById(R.id.circleImageView);
 
 
-
-
         circleImageView = view.findViewById(R.id.circleImageView);
         tvNombre = view.findViewById(R.id.tvNombre);
         tvPais = view.findViewById(R.id.tvPais);
@@ -61,11 +60,6 @@ public class ProfileFragment extends Fragment {
         tvOficio = view.findViewById(R.id.tvOficio);
         tvLink = view.findViewById(R.id.tvLink);
         load();
-
-
-
-
-
 
 
         // onclick para ir a perfil
@@ -83,20 +77,15 @@ public class ProfileFragment extends Fragment {
     }
 
 
-    public void load(){
-        String nombre = preferences.getString("nombre", "SIN DATOS");
-        String pais = preferences.getString("pais", "SIN DATOS");
-        String correo = preferences.getString("correo", "SIN DATOS");
-        String telefono = preferences.getString("telefono", "xxx xxx xxx");
-        String oficio = preferences.getString("oficio", "SIN DATOS");
-        String gitHub = preferences.getString("gitHub", "SIN DATOS");
+    public void load() {
 
-        tvNombre.setText(nombre);
-        tvPais.setText(pais);
-        tvCorreo.setText(correo);
-        tvTelefono.setText(telefono);
-        tvOficio.setText(oficio);
-        tvLink.setText(gitHub);
+
+        tvNombre.setText(preferences.getString("nombre", "SIN DATOS"));
+        tvPais.setText(preferences.getString("pais", "SIN DATOS"));
+        tvCorreo.setText(preferences.getString("correo", "SIN DATOS"));
+        tvTelefono.setText(preferences.getString("telefono", "xxx xxx xxx"));
+        tvOficio.setText(preferences.getString("oficio", "SIN DATOS"));
+        tvLink.setText(preferences.getString("gitHub", "SIN DATOS"));
     }
 
 
