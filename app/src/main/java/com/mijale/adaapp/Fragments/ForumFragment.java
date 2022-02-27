@@ -30,11 +30,12 @@ public class ForumFragment extends Fragment {
     //private DatabaseReference userDatabase;
     AdapterListas adapterListas;
     private RecyclerView recyclerViewPersonas;
-    ArrayList <Post> listaPersonas = new ArrayList<>();;
+    ArrayList<Post> listaPersonas = new ArrayList<>();
+    ;
 
     String mProfileImageUrl;
     ProgressDialog progressDialog;
-    String user = null, message= null;
+    String user = null, message = null;
 
     public ForumFragment() {
     }
@@ -43,7 +44,7 @@ public class ForumFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         postDatabase = FirebaseDatabase.getInstance("https://adaapp-f73d9-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Messages");
-        View view =  inflater.inflate(R.layout.fragment_forum, container, false);
+        View view = inflater.inflate(R.layout.fragment_forum, container, false);
         recyclerViewPersonas = view.findViewById(R.id.recyclerPost);
         mostrarData();
         cargarLista();
@@ -51,7 +52,7 @@ public class ForumFragment extends Fragment {
         return view;
     }
 
-    private void cargarLista(){
+    private void cargarLista() {
         listaPersonas.clear();
         postDatabase.addChildEventListener(new ChildEventListener() {
             @Override
@@ -59,24 +60,29 @@ public class ForumFragment extends Fragment {
                 allListData(dataSnapshot);
                 adapterListas.notifyDataSetChanged();
             }
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) { }
 
             @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) { }
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            }
 
             @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) { }
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+            }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) { }
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
         });
 
     }
 
     @SuppressLint("NewApi")
-    public void allListData(final DataSnapshot dataSnapshot){
-        if(dataSnapshot.exists() && dataSnapshot.getChildrenCount()>0) {
+    public void allListData(final DataSnapshot dataSnapshot) {
+        if (dataSnapshot.exists() && dataSnapshot.getChildrenCount() > 0) {
 
             Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
             if (map.get("useruid") != null) {
@@ -85,17 +91,17 @@ public class ForumFragment extends Fragment {
             if (map.get("message") != null) {
                 message = map.get("message").toString();
             }
-            if (map.get("image") != null){
+            if (map.get("image") != null) {
                 mProfileImageUrl = map.get("image").toString();
             }
         }
 
         progressDialog.dismiss();
 
-        listaPersonas.add(new Post(user,message,mProfileImageUrl));
+        listaPersonas.add(new Post(user, message, mProfileImageUrl));
     }
 
-    public void mostrarData(){
+    public void mostrarData() {
         recyclerViewPersonas.setLayoutManager(new LinearLayoutManager(getContext()));
         adapterListas = new AdapterListas(getContext(), listaPersonas);
         recyclerViewPersonas.setItemAnimator(new DefaultItemAnimator());

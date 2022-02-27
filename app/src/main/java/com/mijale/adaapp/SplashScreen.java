@@ -16,8 +16,6 @@ public class SplashScreen extends AppCompatActivity {
         openApp(true);
 
 
-
-
     }
 
     private void openApp(boolean locationPermission) {

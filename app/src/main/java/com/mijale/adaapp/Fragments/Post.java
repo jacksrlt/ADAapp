@@ -4,7 +4,8 @@ public class Post {
 
     String useruid, message, image;
 
-    public Post() {}
+    public Post() {
+    }
 
     public Post(String useruid, String message, String image) {
         this.useruid = useruid;
