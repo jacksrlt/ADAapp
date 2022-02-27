@@ -51,6 +51,7 @@
     </TextView>
 
     <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/materialDivider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -63,17 +64,16 @@
         android:id="@+id/etPost"
         android:layout_width="355dp"
         android:layout_height="201dp"
+        android:layout_marginTop="23dp"
         android:background="@android:color/transparent"
         android:gravity="top|left"
-        android:hint="¿Qué quieres contar? Máx. 350 caracteres"
 
+        android:hint="¿Qué quieres contar? Máx. 350 caracteres"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.446"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.228"
-        tools:ignore="RtlHardcoded" />
+        app:layout_constraintTop_toBottomOf="@+id/materialDivider"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btEnviarPost"
