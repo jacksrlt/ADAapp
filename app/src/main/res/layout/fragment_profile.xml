@@ -7,8 +7,6 @@
     tools:context=".Fragments.ProfileFragment">
 
 
-    <!--utiliza un fon do redondo para darle forma @drawable/button_redondo -->
-
 
     <!--    esto es el circleimageview-->
 
@@ -28,11 +26,12 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvPais"
         android:layout_width="240dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="28dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="18sp"
         android:fontFamily="monospace"
         android:text="Pais"
-        android:textSize="16sp"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/tvNombre"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvNombre"
@@ -43,12 +42,12 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvTelefono"
         android:layout_width="240dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="52dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="monospace"
         android:text="672462364"
-
-        android:textSize="16sp"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/tvCorreo"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvCorreo"
@@ -58,13 +57,13 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvLink"
-        android:layout_width="290dp"
+        android:layout_width="240dp"
         android:layout_height="45dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="monospace"
         android:text="https://github.com/jacksrlt/ADAapp"
-
-        android:textSize="16sp"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/tvOficio"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="@+id/tvOficio"
@@ -75,11 +74,12 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvOficio"
         android:layout_width="240dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="monospace"
         android:text="Desarrollo de software"
-
-        android:textSize="16sp"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/tvTelefono"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvTelefono"
@@ -90,12 +90,12 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvCorreo"
         android:layout_width="240dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="monospace"
         android:text="Correorandom@gmail.com"
-
-        android:textSize="16sp"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/tvPais"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvPais"
@@ -105,14 +105,13 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvNombre"
-
         android:layout_width="240dp"
-        android:layout_height="wrap_content"
-
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="monospace"
         android:text="Nombre"
-        android:textAlignment="center"
-        android:textSize="25sp"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -123,11 +122,11 @@
     <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -159,12 +158,13 @@
 
     <ImageButton
         android:id="@+id/btEdit"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="36dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="28dp"
+        android:background="@color/white"
         android:scaleType="fitCenter"
-        android:src="@drawable/editar"
+        android:src="@drawable/editarblanco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
