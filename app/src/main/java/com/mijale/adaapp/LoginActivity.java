@@ -1,17 +1,21 @@
 package com.mijale.adaapp;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +28,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
     private Button invitado;
     private EditText emailTextView, passwordTextView;
+    private CheckBox remember;
     private TextView iniciarSesion;
     private TextView registro;
     private FirebaseAuth mAuth;
@@ -41,6 +46,46 @@ public class LoginActivity extends AppCompatActivity {
         passwordTextView = findViewById(R.id.loginPassword);
         registro = findViewById(R.id.ReL);
         iniciarSesion = findViewById(R.id.EnL);
+        remember = findViewById(R.id.remember);
+
+        SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+        String checkbox = preferences.getString("remember", "");
+
+        if (checkbox.equals("true")) {
+
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+
+        } else if (checkbox.equals("false")) {
+
+            Toast.makeText(this, "Por favor, inicia sesion", Toast.LENGTH_SHORT).show();
+
+        }
+
+
+        remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+
+                if (compoundButton.isChecked()) {
+
+                    SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("remember", "true");
+                    editor.apply();
+                    Toast.makeText(LoginActivity.this, "Ahora iniciaras sesion automaticamente", Toast.LENGTH_LONG).show();
+
+                } else if (!compoundButton.isChecked()) {
+
+                    SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("remember", "flase");
+                    editor.apply();
+                    Toast.makeText(LoginActivity.this, "Ahora necesitaras iniciar sesion cada vez", Toast.LENGTH_LONG).show();
+                }
+
+            }
+        });
 
         //Onclick Listener para pantalla de registro
         registro.setOnClickListener(new View.OnClickListener() {
@@ -54,14 +99,13 @@ public class LoginActivity extends AppCompatActivity {
         //Onclick Listener en Botón de inicio de sesión
         iniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 loginUserAccount();
             }
         });
 
 
-        invitado=findViewById(R.id.InL);
+      /* // invitado=findViewById(R.id.InL);
         invitado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,10 +113,10 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        });
+        });*/
     }
 
-    private void loginAnon () {
+    private void loginAnon() {
         mAuth.signInAnonymously()
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -80,7 +124,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("anonSuccess", "signInAnonymously:success");
-                            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
                         } else {
@@ -94,9 +138,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
-    private void loginUserAccount()
-    {
+    private void loginUserAccount() {
         //Tomar los valores de los EditText como String
         String email, password;
         email = emailTextView.getText().toString();
@@ -125,8 +167,7 @@ public class LoginActivity extends AppCompatActivity {
                         new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(
-                                    @NonNull Task<AuthResult> task)
-                            {
+                                    @NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(),
                                             "Bienvenid@",
@@ -140,9 +181,7 @@ public class LoginActivity extends AppCompatActivity {
                                             MainActivity.class);
                                     startActivity(intent);
                                     finish();
-                                }
-
-                                else {
+                                } else {
 
                                     //Inicio de sesión fallido
                                     Toast.makeText(getApplicationContext(),
