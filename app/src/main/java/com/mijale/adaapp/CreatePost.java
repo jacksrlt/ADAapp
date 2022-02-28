@@ -63,7 +63,13 @@ public class CreatePost extends AppCompatActivity {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
                                 useruid = document.getString("username").toString();
-                                image = document.getString("image").toString();
+                                if (!document.contains("image")) {
+
+                                    image = "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541";
+
+                                } else {
+                                    image = document.getString("image").toString();
+                                }
                                 message = etPost.getText().toString();
                                 SendPost sendPost = new SendPost(useruid, message, image);
                                 databaseReference.push().setValue(sendPost);

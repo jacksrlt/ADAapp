@@ -56,6 +56,7 @@ public class Perfil extends AppCompatActivity {
         etCorreo = findViewById(R.id.etCorreo);
         etNombre = findViewById(R.id.etNombre);
         etPais = findViewById(R.id.etPais);
+        circleImageView = findViewById(R.id.circleImageView);
         btguardar = findViewById(R.id.btGuardar);
         btSubirImg = findViewById(R.id.btSubirImg);
 
