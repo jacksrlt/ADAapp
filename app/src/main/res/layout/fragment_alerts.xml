@@ -52,7 +52,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:maxLength="350"
-                android:text="Joan Clarke "
+                android:text="Ada lovelace "
                 android:textAlignment="center"
                 android:textSize="13dp" />
 
@@ -97,11 +97,11 @@
                 android:layout_below="@+id/imagen2"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="16dp"
                 android:maxLength="350"
-                android:text="Joan Clarke "
+                android:text="Margaret Hamilton "
                 android:textAlignment="center"
                 android:textSize="13dp" />
 
