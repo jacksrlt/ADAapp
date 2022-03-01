@@ -27,7 +27,7 @@
             android:layout_marginLeft="16dp"
             android:layout_toRightOf="@id/imagen"
             android:text="Username"
-            android:textSize="11dp"
+            android:textSize="18dp"
             android:textStyle="bold">
 
         </TextView>
